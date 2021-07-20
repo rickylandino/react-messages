@@ -1,8 +1,8 @@
 {
   "name": "@rickylandino/react-messages",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Customizable and lightweight messages for use with React",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "npx babel src --out-dir dist",
     "start": "npx babel src --watch --out-dir dist",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "C:\\Users\\ricky\\source\\npm\\react-messages\\.git"
+    "url": "git+https://github.com/rickylandino/react-messages.git"
   },
   "keywords": [
     "react",
