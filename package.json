@@ -1,6 +1,6 @@
 {
   "name": "@rickylandino/react-messages",
-  "version": "1.0.1",
+  "version": "0.0.1",
   "description": "Customizable and lightweight messages for use with React",
   "main": "index.js",
   "scripts": {
