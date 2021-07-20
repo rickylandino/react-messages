@@ -11,7 +11,7 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-require("./css/toast.css");
+require("./toast.css");
 
 require("../css/transitions.css");
 
