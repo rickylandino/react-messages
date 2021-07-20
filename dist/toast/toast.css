@@ -1,0 +1,117 @@
+.am-message-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0, 0, 0, 0.85);
+    font-size: 14px;
+    line-height: 1.5715;
+    list-style: none;
+    font-feature-settings: 'tnum';
+    position: fixed;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    pointer-events: none;
+}
+
+    .am-message-container.top-left, .am-message-container.top-right, .am-message-container.top-center {
+        top: 10px;
+    }
+
+    .am-message-container.bottom-left, .am-message-container.bottom-right, .am-message-container.bottom-center {
+        bottom: 10px;
+    }
+
+.am-message-body {
+    padding: 8px;
+}
+
+.am-message-container.top-center .am-message-body {
+    text-align: center;
+}
+
+.am-message-container.top-left .am-message-body, .am-message-container.bottom-left .am-message-body {
+    text-align: left;
+}
+
+.am-message-container.top-right .am-message-body, .am-message-container.bottom-right .am-message-body {
+    text-align: right;
+}
+
+.am-message-content {
+    padding: 0 !important;
+    font-size: 16px;
+    display: inline-block;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+    pointer-events: all;
+}
+
+    .am-message-content div span {
+        display: table-cell;
+        padding-left: 7px;
+        vertical-align: middle;
+    }
+
+.am-message-inner {
+    display: table;
+    /* justify-content: center; */
+    /* align-items: center; */
+    float: none;
+    padding-right: 10px;
+    border-radius: 3px;
+}
+
+    .am-message-inner span.am-icon {
+        display: table-cell;
+        padding: 10px;
+        color: #fff;
+        vertical-align: middle;
+        border-radius: 3px 0 0 3px;
+    }
+
+.am-success-message {
+    background: #d4edda !important;
+    border: 1px solid #28a745;
+}
+
+    .am-success-message span.am-icon {
+        background: #28a745;
+    }
+
+.am-error-message {
+    background: #f8d7da !important;
+    border: 1px solid #ff4d4f;
+}
+
+    .am-error-message span.am-icon {
+        background: #ff4d4f;
+    }
+
+.am-warning-message {
+    background: #fff3cd !important;
+    border: 1px solid #ffc107;
+}
+
+    .am-warning-message span.am-icon {
+        background: #ffc107;
+    }
+
+.am-info-message {
+    background: #d1ecf1 !important;
+    border: 1px solid #17a2b8;
+}
+
+    .am-info-message span.am-icon {
+        background: #17a2b8;
+    }
+
+.am-message .am-icon {
+    border-radius: 3px;
+    position: relative;
+    top: 1px;
+    margin-right: 8px;
+    font-size: 16px;
+}
