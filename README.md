@@ -37,9 +37,7 @@ message.success(toastContent, duration?, options)
 message.error(toastContent, duration?, options)
 message.info(toastContent, duration?, options)
 message.warning(toastContent, duration?, options)
-
-//A custom method will soon be here to allow you to choose custom colors and icons
-//message.custom(messageContent, duration?, options)
+message.custom(messageContent, duration?, options)
 ```
 
 ###### Arguments
