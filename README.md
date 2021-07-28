@@ -58,6 +58,8 @@ The options object accepts the following properties
     iconColor
 }
 ```
+Note: background, textColor, icon, and iconColor will only display with the message.custom() method. Otherwise, it will use predefined icons and colors.
+
 ###### Default options
 ```javascript
 {
@@ -73,6 +75,10 @@ The options object accepts the following properties
 | Argument  | Description | Type |
 | ------------- | ----------------------- | ------------- |
 | alignment  | The placement of the toast message. Options are as follows: <br /> 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-left'  | string |
+| background  | The background color used for the toast message. Accepts Hex colors.  | string |
+| textColor  | The text color used for the toast message. Accepts Hex colors.  | string |
+| icon  | Font awesome icon associated to the toast message. Any free icons they provide will work with this.  | string |
+| iconColor  | The icon color used for the toast message, if you want it different from the text color. Accepts Hex colors.  | string |
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
