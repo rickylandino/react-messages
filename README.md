@@ -48,19 +48,25 @@ message.custom(messageContent, duration?, options)
 | duration  | How long to display the toast message (in seconds). Set to 0 if you do not want it to auto dismiss.  | number | 3 |
 | options | Options to allow for customization. Currently only supports alignment. | options | defaultOptions |
 
-The options object looks like below
+The options object accepts the following properties
 ```javascript
 {
-  alignment: 'top-left'
+    alignment,
+    background,
+    textColor,
+    icon,
+    iconColor
 }
-
 ```
 ###### Default options
 ```javascript
 {
-  alignment: 'top-center'
+    alignment: 'top-center',
+    background: '#fff',
+    textColor: '#000',
+    icon: 'fas fa-bell',
+    iconColor: '#fff'
 }
-
 ```
 
 ###### Object attributes
