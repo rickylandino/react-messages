@@ -34,9 +34,11 @@ confirm({
                   buttons: ["Yes", "No"]
               }, (buttonPressed) => {
                       if (buttonPressed === 'Yes') {
-                          console.log("Yes was clicked");
+                          //Do some stuff here
                           return 0;
-                      } else { return 0; }
+                      } else { 
+                        return 0; 
+                      }
               });
 
 ```
@@ -105,7 +107,7 @@ Note: background, textColor, icon, and iconColor will only display with the mess
 | Argument  | Description | Type | Default |
 | ------------- | ----------------------- | ------------- | ----- |
 | content | Options to allow for customization. Accepts title, content, buttons, and theme. | options | defaultOptions |
-| callback  | Callback  | HTMLElement \| string | \- |
+| callback(buttonClicked)  | Callback function to determine what button was clicked. Accepts a string that notifies what button was clicked. returning 0 or null from the callback will close the confirm dialog. | HTMLElement \| string | \- |
 
 The content object accepts the following properties
 ```javascript
