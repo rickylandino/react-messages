@@ -6,8 +6,6 @@ React Messages are customizable and lightweight messages for use with React.
 ![alt text](https://www.theappmonkey.com/assets/confirm_example_light.png)
 ![alt text](https://www.theappmonkey.com/assets/confirm_example_dark.png)
 
-This package currently just supports toast messages, but more interactive messages, dialogs, etc. will be added.
-
 ## Installation
 ```npm
 npm install @rickylandino/react-messages
@@ -16,7 +14,7 @@ npm install @rickylandino/react-messages
 ## Usage
 
 ```javascript
-import { toast } from '@rickylandino/react-messages'
+import { toast, confirm } from '@rickylandino/react-messages'
 
 //returns a success message from a string
 toast.success("Success Message");
@@ -29,6 +27,17 @@ toast.warning("Warning Message");
 
 //returns an error message from an HTML element, with no timeout, in the top left corner of the screen
 toast.error(<p>Error Message</p>, { alignment: 'top-left', duration: 0 });
+
+confirm.large({
+                  title: "You are about to logout",
+                  content: "Are you sure you would like to proceed?",
+                  buttons: ["Yes", "No"]
+              }, (buttonPressed) => {
+                      if (buttonPressed === 'Yes') {
+                          console.log("Yes was clicked");
+                          return 0;
+                      } else { return 0; }
+              });
 
 ```
 
@@ -43,20 +52,22 @@ message.info(toastContent, options)
 message.warning(toastContent, options)
 message.loading(toastContent, options)
 message.custom(messageContent, options)
+
+confirm(confirmContent, callback)
 ```
 
-###### Arguments
+###### Toast Arguments
 
 | Argument  | Description | Type | Default |
 | ------------- | ----------------------- | ------------- | ----- |
 | toastContent  | The content of the message  | HTMLElement \| string | \- |
-| options | Options to allow for customization. Currently only supports alignment. | options | defaultOptions |
+| options | Options to allow for customization. | options | defaultOptions |
 
 The options object accepts the following properties
 ```javascript
 {
     alignment,
-    duration
+    duration,
     background,
     textColor,
     icon,
@@ -81,10 +92,48 @@ Note: background, textColor, icon, and iconColor will only display with the mess
 | Argument  | Description | Type |
 | ------------- | ----------------------- | ------------- |
 | alignment  | The placement of the toast message. Options are as follows: <br /> 'top-left', 'top-center', 'top-right', 'bottom-left', 'bottom-center', 'bottom-left'  | string |
+| duration  | How long to display the toast message (in seconds). Set to 0 if you do not want it to auto dismiss.  | number |
 | background  | The background color used for the toast message. Accepts Hex colors.  | string |
 | textColor  | The text color used for the toast message. Accepts Hex colors.  | string |
 | icon  | Font awesome icon associated to the toast message. Any free icons they provide will work with this.  | string |
 | iconColor  | The icon color used for the toast message, if you want it different from the text color. Accepts Hex colors.  | string |
+
+
+
+###### Confirm Arguments
+
+| Argument  | Description | Type | Default |
+| ------------- | ----------------------- | ------------- | ----- |
+| content | Options to allow for customization. Accepts title, content, buttons, and theme. | options | defaultOptions |
+| callback  | Callback  | HTMLElement \| string | \- |
+
+The content object accepts the following properties
+```javascript
+{
+    title,
+    content,
+    buttons,
+    theme
+}
+```
+
+###### Default content
+```javascript
+{
+    title: 'Do you want to proceed?',
+    content: 'Please confirm below',
+    buttons: ['Yes', 'No'],
+    theme: 'light'
+}
+```
+
+###### Object attributes
+| Argument  | Description | Type |
+| ------------- | ----------------------- | ------------- |
+| title  | The title of the confirm message  | string |
+| content  | Sub text of the confirm message  | string |
+| buttons  | Array of buttons to customize what the user can click  | string[] |
+| theme  | If using a dark theme, you can set theme="dark"  | string |
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
