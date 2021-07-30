@@ -28,7 +28,7 @@ toast.warning("Warning Message");
 //returns an error message from an HTML element, with no timeout, in the top left corner of the screen
 toast.error(<p>Error Message</p>, { alignment: 'top-left', duration: 0 });
 
-confirm.large({
+confirm({
                   title: "You are about to logout",
                   content: "Are you sure you would like to proceed?",
                   buttons: ["Yes", "No"]
