@@ -3,6 +3,8 @@
 React Messages are customizable and lightweight messages for use with React. 
 
 ![alt text](https://www.theappmonkey.com/assets/toast_examples.png)
+![alt text](https://www.theappmonkey.com/assets/confirm_example_light.png)
+![alt text](https://www.theappmonkey.com/assets/confirm_example_dark.png)
 
 This package currently just supports toast messages, but more interactive messages, dialogs, etc. will be added.
 
