@@ -18,13 +18,13 @@ import { toast } from '@rickylandino/react-messages'
 toast.success("Success Message");
 
 //returns a success message from an HTML element, with a 5 second timeout
-toast.info(<p>Info Message</p>, 5);
+toast.info(<p>Info Message</p>, { duration: 5 });
 
-//returns a success message from a string
+//returns a warning message from a string
 toast.warning("Warning Message");
 
-//returns a success message from an HTML element, with no timeout, in the top left corner of the screen
-toast.error(<p>Error Message</p>, 0, { alignment: 'top-left' });
+//returns an error message from an HTML element, with no timeout, in the top left corner of the screen
+toast.error(<p>Error Message</p>, { alignment: 'top-left', duration: 0 });
 
 ```
 
@@ -33,11 +33,12 @@ toast.error(<p>Error Message</p>, 0, { alignment: 'top-left' });
 This component provides some static methods with usage and arguments below
 
 ```javascript
-message.success(toastContent, duration?, options)
-message.error(toastContent, duration?, options)
-message.info(toastContent, duration?, options)
-message.warning(toastContent, duration?, options)
-message.custom(messageContent, duration?, options)
+message.success(toastContent, options)
+message.error(toastContent, options)
+message.info(toastContent, options)
+message.warning(toastContent, options)
+message.loading(toastContent, options)
+message.custom(messageContent, options)
 ```
 
 ###### Arguments
@@ -45,13 +46,13 @@ message.custom(messageContent, duration?, options)
 | Argument  | Description | Type | Default |
 | ------------- | ----------------------- | ------------- | ----- |
 | toastContent  | The content of the message  | HTMLElement \| string | \- |
-| duration  | How long to display the toast message (in seconds). Set to 0 if you do not want it to auto dismiss.  | number | 3 |
 | options | Options to allow for customization. Currently only supports alignment. | options | defaultOptions |
 
 The options object accepts the following properties
 ```javascript
 {
     alignment,
+    duration
     background,
     textColor,
     icon,
@@ -64,6 +65,7 @@ Note: background, textColor, icon, and iconColor will only display with the mess
 ```javascript
 {
     alignment: 'top-center',
+    duration: 3,
     background: '#fff',
     textColor: '#000',
     icon: 'fas fa-bell',
